@@ -1,8 +1,10 @@
-
+from machineInstructions.py import *
+from relocator.py import *
+from tableGenerator.py import *
+from valueCalculator.py import *
+from display.py import *
 
 #format [symbol value length relocation]
-      
-  
 
 def compConvert(fileLocn):
     fp = open(fileLocn,'r')
