@@ -1,11 +1,12 @@
-from machineInstructions.py import *
-from relocator.py import *
-from tableGenerator.py import *
-from valueCalculator.py import *
-from display.py import *
+import display
+import machineInstructions
+import relocator
+import tableGenerator
+import valueCalculator
 
 #format [symbol value length relocation]
-
+      
+  
 def compConvert(fileLocn):
     fp = open(fileLocn,'r')
     # format Label@CMD@ARG1,ARG2,ARG3...................
@@ -18,11 +19,11 @@ def compConvert(fileLocn):
     rxType = ['L','A','ST','CLI','BNE','DS','DC','LA','C']
     codeModified = [x.split('@') for x in code]
     litTab = []
-    relLocn = relLocationCalc(codeModified , pseudoType , rrType , rxType , litTab)
-    symTab = symbolTable(relLocn , pseudoType , rrType , rxType)
-    bTab = baseTable(relLocn,symTab)
-    machTab = machInstn(relLocn , symTab , bTab , litTab , pseudoType , rrType , rxType)
-    disp(relLocn,symTab,litTab,bTab,machTab)
+    relLocn = relocator.relLocationCalc(codeModified , pseudoType , rrType , rxType , litTab)
+    symTab = tableGenerator.symbolTable(relLocn , pseudoType , rrType , rxType)
+    bTab = tableGenerator.baseTable(relLocn,symTab)
+    machTab = machineInstructions.machInstn(relLocn , symTab , bTab , litTab , pseudoType , rrType , rxType)
+    display.disp(relLocn,symTab,litTab,bTab,machTab)
 
 
 compConvert("assemblyCode.txt")
