@@ -1,3 +1,9 @@
+import display
+import machineInstructions
+import relocator
+import tableGenerator
+import valueCalculator
+
 def relLocationCalc(codeModified , pseudoType , rrType , rxType, litTab):    
     relLocn = []
     litCount = 0
