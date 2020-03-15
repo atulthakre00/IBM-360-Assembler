@@ -1,3 +1,9 @@
+import display
+import machineInstructions
+import relocator
+import tableGenerator
+import valueCalculator
+
 def symbolTable(relLocn , pseudoType , rrType , rxType):
     symTab = []
     for x in relLocn:
@@ -27,8 +33,8 @@ def baseTable(relLocn,symTab):
             if temp[0] == '*':
                 temp[0] = x[0]
             elif not(temp[0].isnumeric()):
-                temp[0] = valFromSymbol(temp[0],symTab)
+                temp[0] = valueCalculator.valFromSymbol(temp[0],symTab)
             if not(temp[1].isnumeric()):
-                temp[1] = valFromSymbol(temp[1],symTab)
+                temp[1] = valueCalculator.valFromSymbol(temp[1],symTab)
             bTab.append([ int(temp[1]) , int(temp[0]) ])
     return bTab
