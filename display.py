@@ -1,3 +1,8 @@
+import display
+import machineInstructions
+import relocator
+import tableGenerator
+import valueCalculator
 
 def disp(relLocn,symTab,litTab,bTab,machTab):
     print("Assembly Instructions\n")
