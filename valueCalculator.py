@@ -1,3 +1,9 @@
+import display
+import machineInstructions
+import relocator
+import tableGenerator
+import valueCalculator
+
 def valFromSymbol(symbol,symTab):
     for x in symTab:
         if x[0] == symbol:
