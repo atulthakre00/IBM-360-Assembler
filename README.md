@@ -22,3 +22,33 @@ IBM 360 assembler | Main file that calls all other functions
 ########################################################
 
 AssemblyCode.txt and AssemblyCode2.txt are assembly code sample inputs for testing the IBM 360 assembler
+
+Format of Assembler Instructions
+
+Relative Location         Assembly Instruction
+
+########################################################
+
+Format of Symbol Table
+
+Symbol          Value         Length          Relocation
+
+########################################################
+
+Format of Literal Table
+
+Literal         Value         Length          Relocation
+
+########################################################
+
+Format of Base Table
+
+Base Register         Content
+
+########################################################
+
+Format Of Machine Instructions
+
+Relative Location         Machine Instruction
+
+########################################################
